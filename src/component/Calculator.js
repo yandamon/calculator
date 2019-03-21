@@ -1,4 +1,5 @@
 import React from 'react';
+import './Calculator.css';
 
 const validateInput = ( value ) =>{
     const operation = ['+','-','*','/','^','?',''];
@@ -63,8 +64,8 @@ class Calculator extends React.Component{
             case '^':
                 return Math.pow(firstNumber,secondNumber);
             case '?':
-                let secondInputForScore = this.state.secondInput ? parseFloat(this.state.secondInput) : 1;
-                return Math.sqrt(firstNumber) * secondInputForScore;
+                let secondInputForSquareRoot = this.state.secondInput ? parseFloat(this.state.secondInput) : 1;
+                return Math.sqrt(firstNumber) * secondInputForSquareRoot;
             default:
                 return firstNumber ? firstNumber : 0;
         }
@@ -111,20 +112,21 @@ class Calculator extends React.Component{
 
     render(){
         return (
-            <div>
-                <h2>SIMPLE CALCULATOR</h2>
-                <p>{this.state.firstInput} {this.state.operation} {this.state.secondInput}</p>
+            <div className='calculator'>
+                <h2 className='header'>SIMPLE CALCULATOR</h2>
+                <p className='output-paragraph'>{this.state.firstInput} {this.state.operation} {this.state.secondInput}</p>
                 <form onSubmit={this.handleSubmit}>
-                    <input type='text' 
+                    <input className='form-input'
+                           type='text' 
                            placeholder='please input'
                            onChange={this.handleChange}
                            value={this.state.currentInput}>
                         
                     </input>
                 </form>
-                <button onClick={this.showResult}>Result</button>
-                <button onClick={this.resetAll}>Reset</button>
-                {this.state.errorMessage && <p>error: {this.state.errorMessage}</p>}
+                <p className='error-paragraph'>{this.state.errorMessage && <span>error: {this.state.errorMessage}</span>}</p>
+                <button className='operation-button' onClick={this.showResult}>Result</button>
+                <button className='operation-button' onClick={this.resetAll}>Reset</button>
             </div>
         )
     }

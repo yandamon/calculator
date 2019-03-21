@@ -1,0 +1,37 @@
+.calculator{
+    margin-bottom: 50px
+}
+.form-input{
+    width: 84%;
+    height: 50px;
+    font-size:larger;
+    text-align: right;
+}
+
+.operation-button{
+    display: inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    background-color:#4eb5f1;
+    text-align:center;
+    transition: all 0.2s;
+    width: 30%;
+    }
+.operation-button:hover{
+    background-color:#4095c6;
+    }
+
+.error-paragraph{
+    height: 50px;
+}
+
+.output-paragraph{
+    margin-right: 8%;
+    text-align: right
+}
